@@ -46,18 +46,14 @@ const hw1Button = document.getElementById("hw1");
 // Получаем элемент HW1
 const hw1Element = document.getElementById("collapse-1");
 
-// Переменная для отслеживания состояния HW1
-let hw1IsOpen = false;
+// Обработчик события показа элемента HW1
+hw1Element.addEventListener("shown.bs.collapse", function () {
+    alert("Вы открыли HW1");
+});
 
-// Обработчик события click для кнопки "hw1"
-hw1Button.addEventListener("click", function () {
-    // Проверяем состояние HW1
-    if (!hw1IsOpen) {
-        alert("Вы открыли HW1");
-    }
-
-    // Изменяем состояние HW1
-    hw1IsOpen = !hw1IsOpen;
+// Обработчик события скрытия элемента HW1
+hw1Element.addEventListener("hidden.bs.collapse", function () {
+    // Ничего не делаем при закрытии
 });
 
 // Получаем элемент с id "homework-list"
