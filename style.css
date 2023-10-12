@@ -79,7 +79,7 @@ header {
 }
 
 .js {
-    background-color: #dd8c4a;
+    background-color: red;
     color: white;
     padding: 5px 10px;
     max-height: 100px; /* Максимальная высота */
