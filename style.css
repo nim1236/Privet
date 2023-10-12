@@ -12,13 +12,13 @@ header {
     color: gray;
 }
 
-#hogwarts-logo {
+#logo {
     width: 300px;
     height: 120px;
     cursor: pointer;
 }
 
-#homework-list {
+#list {
     display: flex;
     align-items: center;
     margin: 0;
