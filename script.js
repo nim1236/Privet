@@ -73,7 +73,7 @@ homeworkItems.forEach(function(item) {
 });
 
 // Получаем все элементы с классом "success"
-const successElements = document.querySelectorAll(".success");
+const successElements = document.querySelectorAll(".success1");
 
 // Проходим по каждому элементу
 successElements.forEach(function(element) {
