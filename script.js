@@ -40,14 +40,24 @@ document.getElementById("minus-btn").addEventListener("click", decrementCounter)
 document.getElementById("reset-btn").addEventListener("click", resetCounter);
 
 
-// Обработчик события для открытия HW1
-document.getElementById("hw1").addEventListener("show.bs.collapse", function () {
-    alert("Вы открыли HW1");
-});
+// Получаем элемент кнопки "hw1"
+const hw1Button = document.getElementById("hw1");
 
-// Обработчик события для закрытия HW1
-document.getElementById("hw1").addEventListener("hide.bs.collapse", function () {
-    // Ничего не делаем при закрытии
+// Получаем элемент HW1
+const hw1Element = document.getElementById("collapse-1");
+
+// Переменная для отслеживания состояния HW1
+let hw1IsOpen = false;
+
+// Обработчик события click для кнопки "hw1"
+hw1Button.addEventListener("click", function () {
+    // Проверяем состояние HW1
+    if (!hw1IsOpen) {
+        alert("Вы открыли HW1");
+    }
+
+    // Изменяем состояние HW1
+    hw1IsOpen = !hw1IsOpen;
 });
 
 // Получаем элемент с id "homework-list"
