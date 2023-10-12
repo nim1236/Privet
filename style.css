@@ -1,0 +1,101 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Стили для header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    color: gray;
+}
+
+#hogwarts-logo {
+    width: 300px;
+    height: 120px;
+    cursor: pointer;
+}
+
+#homework-list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 50px;
+}
+
+.homework {
+    margin-right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.homework:hover {
+    color: blue;
+}
+
+.success {
+    background-color: #5deb62;
+    color: rgb(0, 0, 0);
+    margin: 5px 0;
+    max-width: 700px; /* Максимальная ширина */
+    max-height: 100px; /* Максимальная высота */
+    list-style: none;
+}
+.warning {
+    background-color: #fffb09;
+    color: rgb(0, 0, 0);
+    margin: 5px 0;
+    max-width: 700px; /* Максимальная ширина */
+    max-height: 100px; /* Максимальная высота */
+    list-style: none;
+}
+.html {
+    background-color: #139724;
+    color: white;
+    padding: 5px 10px;
+    max-height: 100px; /* Максимальная высота */
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    width: 60px;
+}
+
+.css {
+    background-color: #8d15c5;
+    color: white;
+    padding: 5px 10px;
+    max-height: 100px; /* Максимальная высота */
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    width: 60px;
+}
+
+.js {
+    background-color: #dd8c4a;
+    color: white;
+    padding: 5px 10px;
+    max-height: 100px; /* Максимальная высота */
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    width: 60px;
+}
+
+.arrow {
+    margin-left: 35px;
+}
+
+.btn-primary {
+    margin-left: 35px;
+}
+
+.count {
+    margin-left: 35px;
+}
+
+.btn-secondary {
+    margin-left: 35px;
+}
