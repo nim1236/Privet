@@ -98,7 +98,7 @@ header {
 }
 
 .count {
-    margin-left: 35px;
+    margin-left: 25px;
 }
 
 .btn-secondary {
@@ -109,7 +109,6 @@ header {
     background-color: green;
     color: white;
     padding: 10px 20px; /* Задаем отступы */
-    margin-left: -35px;
     margin-right: 35px;
 }
 
