@@ -37,7 +37,7 @@ document.getElementById("plus-btn").addEventListener("click", incrementCounter);
 document.getElementById("minus-btn").addEventListener("click", decrementCounter);
 
 // Добавляем обработчик клика на "Сбросить"
-resetButton.addEventListener("click", resetCounter);
+document.getElementById("reset-btn").addEventListener("click", resetCounter);
 
 // Добавляем обработчик клика на "hw-1" в хедере
 document.getElementById("hw1").addEventListener("click", function() {
