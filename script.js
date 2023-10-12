@@ -21,11 +21,20 @@ function decrementCounter() {
     updateCounter();
 }
 
+// Функция для сброса счетчика
+function resetCounter() {
+    count = 0;
+    updateCounter();
+}
+
 // Добавляем обработчик клика на кнопку "+"
 document.getElementById("plus-btn").addEventListener("click", incrementCounter);
 
 // Добавляем обработчик клика на кнопку "-"
 document.getElementById("minus-btn").addEventListener("click", decrementCounter);
+
+// Добавляем обработчик клика на "Сбросить"
+resetButton.addEventListener("click", resetCounter);
 
 // Добавляем обработчик клика на "hw-1" в хедере
 document.getElementById("hw1").addEventListener("click", function() {
