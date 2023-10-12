@@ -72,13 +72,15 @@ homeworkItems.forEach(function(item) {
     item.addEventListener("click", handleClickOnHomework);
 });
 
-// Получаем все элементы с классом "js"
-const jsElements = document.querySelectorAll(".js");
+// Выбираем элементы, содержащие нужные тексты
+const elementsWithText = Array.from(document.querySelectorAll(".js, .success")).filter(element => {
+    const text = element.textContent.trim();
+    return text === "Сделать счетчик с 2 кнопками (+ -) и числом count" ||
+           text === "Сделать alert при клике на hw-1 в хедере" ||
+           text === "Сделать alert при клике на ссылку меню";
+});
 
-// Выбираем только последние три элемента
-const lastThreeJsElements = Array.from(jsElements).slice(-3);
-
-// Добавляем новый класс "new-background-color" к последним трём элементам
-lastThreeJsElements.forEach(function(element) {
+// Добавляем новый класс "new-background-color" к найденным элементам
+elementsWithText.forEach(function(element) {
     element.classList.add("new-background-color");
 });
