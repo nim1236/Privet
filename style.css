@@ -48,6 +48,14 @@ header {
     max-height: 100px; /* Максимальная высота */
     list-style: none;
 }
+.success1 {
+    background-color: red;
+    color: rgb(0, 0, 0);
+    margin: 5px 0;
+    max-width: 700px; /* Максимальная ширина */
+    max-height: 100px; /* Максимальная высота */
+    list-style: none;
+}
 .warning {
     background-color: #fffb09;
     color: rgb(0, 0, 0);
