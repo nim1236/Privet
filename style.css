@@ -40,6 +40,14 @@ header {
     color: blue;
 }
 
+.success1 {
+    background-color: #5deb62;
+    color: rgb(0, 0, 0);
+    margin: 5px 0;
+    max-width: 700px; /* Максимальная ширина */
+    max-height: 100px; /* Максимальная высота */
+    list-style: none;
+}
 .success {
     background-color: #5deb62;
     color: rgb(0, 0, 0);
