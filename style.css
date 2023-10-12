@@ -123,4 +123,6 @@ header {
     display: inline-block; /* Сделаем контейнер вокруг текста */
 }
 
-
+.new-background-color {
+    background-color: red; /* Новый цвет фона */
+}
