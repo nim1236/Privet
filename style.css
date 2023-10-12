@@ -104,5 +104,4 @@ header {
     border: 1px solid #000; /* Цвет и толщина контура */
     padding: 10px; /* Отступ внутри блока */
     margin-top: 10px; /* Отступ сверху */
-    max-width: 400px;
 }
