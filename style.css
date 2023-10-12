@@ -109,8 +109,8 @@ header {
     background-color: green;
     color: white;
     padding: 10px 20px; /* Задаем отступы */
-    
-    margin-right: 50px;
+    margin-left: -35px;
+    margin-right: 35px;
 }
 
 #minus-btn {
