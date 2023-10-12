@@ -1,6 +1,9 @@
 // Получаем элемент с id "counter"
 const counterElement = document.getElementById("counter");
 
+// Получаем элемент кнопки "Сбросить"
+const resetButton = document.getElementById("reset-btn");
+
 // Инициализируем переменную count
 let count = 0;
 
