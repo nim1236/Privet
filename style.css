@@ -104,6 +104,20 @@ header {
 .btn-secondary {
     margin-left: 35px;
 }
+
+#plus-btn {
+    background-color: green;
+    color: white;
+    padding: 10px 20px; /* Задаем отступы */
+    margin: 5px; /* Задаем отступы */
+}
+
+#minus-btn {
+    background-color: red;
+    color: white;
+    padding: 10px 20px; /* Задаем отступы */
+    margin: 5px; /* Задаем отступы */
+}
 .block {
     border: 1px solid #000;
     padding: 10px;
