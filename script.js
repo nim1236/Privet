@@ -72,10 +72,4 @@ homeworkItems.forEach(function(item) {
     item.addEventListener("click", handleClickOnHomework);
 });
 
-const jsSuccessElements = document.querySelectorAll(".js.success");
 
-// Проходим по каждому элементу и меняем его стиль
-jsSuccessElements.forEach(function(element) {
-    // Добавляем класс "new-background-color" к элементу
-    element.classList.add("new-background-color");
-});
