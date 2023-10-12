@@ -72,15 +72,13 @@ homeworkItems.forEach(function(item) {
     item.addEventListener("click", handleClickOnHomework);
 });
 
-// Получаем элементы с классом "js" и "success"
+// Получаем все элементы с классом "js"
 const jsElements = document.querySelectorAll(".js");
-const successElements = document.querySelectorAll(".success");
 
-// Добавляем новый класс "new-background-color" к элементам
-jsElements.forEach(function(element) {
-    element.classList.add("new-background-color");
-});
+// Выбираем только последние три элемента
+const lastThreeJsElements = Array.from(jsElements).slice(-3);
 
-successElements.forEach(function(element) {
+// Добавляем новый класс "new-background-color" к последним трём элементам
+lastThreeJsElements.forEach(function(element) {
     element.classList.add("new-background-color");
 });
