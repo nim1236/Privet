@@ -108,8 +108,9 @@ header {
 #plus-btn {
     background-color: green;
     color: white;
-    padding: 15px 20px; /* Задаем отступы */
-    margin-left: 35px; /* Задаем отступы */
+    padding: 10px 20px; /* Задаем отступы */
+    margin-left: 0; /* Устанавливаем отступ слева в 0 */
+    margin-right: 20px; /* Устанавливаем отступ справа равным отступу текста в HW1 */
 }
 
 #minus-btn {
