@@ -109,8 +109,8 @@ header {
     background-color: green;
     color: white;
     padding: 10px 20px; /* Задаем отступы */
-    margin-left: 35; /* Устанавливаем отступ слева в 0 */
-    margin-right: 20px; /* Устанавливаем отступ справа равным отступу текста в HW1 */
+    
+    margin-right: 35px;
 }
 
 #minus-btn {
