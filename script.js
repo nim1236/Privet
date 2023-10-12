@@ -39,9 +39,15 @@ document.getElementById("minus-btn").addEventListener("click", decrementCounter)
 // Добавляем обработчик клика на "Сбросить"
 document.getElementById("reset-btn").addEventListener("click", resetCounter);
 
-// Добавляем обработчик клика на "hw-1" в хедере
-document.getElementById("hw1").addEventListener("click", function() {
-    alert("Вы кликнули на hw-1 в хедере");
+
+// Обработчик события для открытия HW1
+document.getElementById("hw1").addEventListener("show.bs.collapse", function () {
+    alert("Вы открыли HW1");
+});
+
+// Обработчик события для закрытия HW1
+document.getElementById("hw1").addEventListener("hide.bs.collapse", function () {
+    // Ничего не делаем при закрытии
 });
 
 // Получаем элемент с id "homework-list"
