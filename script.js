@@ -72,11 +72,10 @@ homeworkItems.forEach(function(item) {
     item.addEventListener("click", handleClickOnHomework);
 });
 
-// Получаем все элементы с классом "success"
-const successElements = document.querySelectorAll(".success1");
+const jsSuccessElements = document.querySelectorAll(".js.success");
 
-// Проходим по каждому элементу
-successElements.forEach(function(element) {
+// Проходим по каждому элементу и меняем его стиль
+jsSuccessElements.forEach(function(element) {
     // Добавляем класс "new-background-color" к элементу
     element.classList.add("new-background-color");
 });
