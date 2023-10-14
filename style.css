@@ -46,11 +46,12 @@ header {
     margin: 5px 0;
     max-width: 700px; /* Максимальная ширина */
     max-height: 100px; /* Максимальная высота */
+    margin-right: 10px;
     list-style: none;
 }
 .success1 {
     background-color: red;
-    color: white;
+    color: rgb(255, 255, 255);
     margin: 5px 0;
     max-width: 700px; /* Максимальная ширина */
     max-height: 100px; /* Максимальная высота */
@@ -107,16 +108,23 @@ header {
 
 .count {
     margin-left: 25px;
+    padding: 5px 0px; /* Изменяем внутренние отступы, при необходимости */
 }
 
 .btn-secondary {
     margin-left: 35px;
 }
-
+.btn-danger{
+    margin-left: 20px;
+}
+.btn-success {
+    margin-left: 35px;
+}
 #plus-btn {
     background-color: green;
     color: white;
-    margin-left: 35px;
+    margin-left: -15px; /* Изменяем отступ слева */
+    margin-right: -20px; /* Добавляем отступ справа (при необходимости) */
 }
 
 #minus-btn {

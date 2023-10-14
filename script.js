@@ -1,8 +1,12 @@
-// Получаем элемент с id "counter"
-const counterElement = document.getElementById("counter");
-
 // Получаем элемент кнопки "Сбросить"
-const resetButton = document.getElementById("reset-btn");
+const resetButton = document.querySelector(".btn-secondary");
+// Получаем элемент кнопки "+"
+const plusButton = document.querySelector(".btn-success");
+// Получаем элемент кнопки "-"
+const minusButton = document.querySelector(".btn-danger");
+
+// Получаем элемент счетчика
+const counterElement = document.querySelector(".count span");
 
 // Инициализируем переменную count
 let count = 0;
@@ -31,13 +35,13 @@ function resetCounter() {
 }
 
 // Добавляем обработчик клика на кнопку "+"
-document.getElementById("plus-btn").addEventListener("click", incrementCounter);
+document.querySelector(".plus-btn").addEventListener("click", incrementCounter);
 
 // Добавляем обработчик клика на кнопку "-"
-document.getElementById("minus-btn").addEventListener("click", decrementCounter);
+document.querySelector(".minus-btn").addEventListener("click", decrementCounter);
 
 // Добавляем обработчик клика на "Сбросить"
-document.getElementById("reset-btn").addEventListener("click", resetCounter);
+document.querySelector(".reset-btn").addEventListener("click", resetCounter);
 
 
 // Получаем элемент кнопки "hw1"
@@ -72,4 +76,10 @@ homeworkItems.forEach(function(item) {
     item.addEventListener("click", handleClickOnHomework);
 });
 
+const jsSuccessElements = document.querySelectorAll(".js.success");
 
+// Проходим по каждому элементу и меняем его стиль
+jsSuccessElements.forEach(function(element) {
+    // Добавляем класс "new-background-color" к элементу
+    element.classList.add("new-background-color");
+});
