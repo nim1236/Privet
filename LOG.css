@@ -1,0 +1,66 @@
+
+.bg-ex-animation {
+    background: url(image.jpg); /* Путь к картинке */
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    animation: animated-bg 60s linear infinite;
+    width: 1364px;
+    height: 690px;
+    
+  }
+  
+  @keyframes animated-bg {
+    from { background-position: 0 0; }
+    to { background-position: 0 1000px; }
+  }
+
+  input:focus {
+    outline: none; /* Убирает обводку при фокусировке на элементе */
+}
+  .registration-box {
+    background-color: rgba(8, 67, 134, 0.7);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 325px;
+    height: 300px;
+    margin-left: 500px;
+    margin-top: -550px;
+    
+}
+
+.custom-heading {
+    color: rgb(255, 255, 255);
+    font-size: 36px;
+}
+
+.input-container {
+    margin-top: 20px;
+    border-radius: 20px; /* Задайте радиус закругления */
+    overflow: hidden; /* Обрежьте контейнер, чтобы скрыть углы */
+}
+
+.label {
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    
+}
+
+.input-label {
+    color: white; /* Устанавливаем белый цвет текста для надписей */
+    display: block;
+    font-weight: bold;
+}
+
+
+
+
+       
