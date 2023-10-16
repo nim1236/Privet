@@ -3,12 +3,12 @@
     background: url(image.jpg); /* Путь к картинке */
     background-position: center;
     background-repeat: repeat;
-    background-size: cover;
+    background-attachment: scroll; /* Разрешаем фону двигаться при прокрутке */
+    background-size: cover; /* Подгоняем фон под размер контейнера */
     animation: animated-bg 60s linear infinite;
-    width: 1364px;
-    height: 690px;
-    
-  }
+    width: 100%; /* Ширина 100% для адаптивности */
+    height: 100vh; /* Высота 100% относительно высоты окна браузера */
+}
   
   @keyframes animated-bg {
     from { background-position: 0 0; }
