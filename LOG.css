@@ -60,7 +60,21 @@ input {
     font-weight: bold;
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
 
+.login-button {
+    border-radius: 20px; /* Задайте радиус закругления для кнопки */
+    padding: 10px 20px; /* Измените отступы, при необходимости */
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
 
-
-       
+.me-auto{
+    font-size: 15px;
+}

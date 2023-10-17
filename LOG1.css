@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Цвет фона, если нужен */
+}
+
+.centered-message {
+    text-align: center;
+    font-size: 24px;
+    background-color: #fff; /* Цвет фона для сообщения */
+    padding: 20px; /* Отступы вокруг сообщения */
+    border-radius: 10px; /* Закругление углов для сообщения */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Тень для сообщения */
+}
+
+
+
+

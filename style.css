@@ -35,9 +35,15 @@ header {
     cursor: pointer;
     transition: color 0.3s;
 }
+.homework2 {
+    transition: color 0.3s;
+    text-decoration: none; /* Убрать подчеркивание текста */
+    margin-right: 20px;
+    cursor: pointer;
+}
 
 .homework:hover {
-    color: blue;
+    color: rgb(0, 0, 255);
 }
 
 .success {

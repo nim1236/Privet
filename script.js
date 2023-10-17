@@ -51,13 +51,10 @@ document.querySelector(".reset-btn").addEventListener("click", resetCounter);
 
 // Получаем элемент кнопки "hw1"
 const hw1Button = document.getElementById("hw1");
-// Получаем элемент кнопки "HW2"
-const hw2Button = document.getElementById("hw2");
+
 
 // Получаем элемент HW1
 const hw1Element = document.getElementById("collapse-1");
-// Получаем элемент HW2
-const hw2Element = document.getElementById("collapse-2");
 
 // Обработчик события показа элемента HW1
 hw1Element.addEventListener("shown.bs.collapse", function () {
@@ -69,15 +66,15 @@ hw1Element.addEventListener("hidden.bs.collapse", function () {
     // Ничего не делаем при закрытии
 });
 
-// Обработчик события показа элемента HW2
-hw2Element.addEventListener("shown.bs.collapse", function () {
-    alert("Вы открыли HW2");
+// Получаем элемент Homework_2
+const homework2Button = document.getElementById("homework-2");
+
+// Обработчик события клика на Homework_2
+homework2Button.addEventListener("click", function () {
+    alert("Вы кликнули на Homework_2");
 });
 
-// Обработчик события скрытия элемента HW2
-hw2Element.addEventListener("hidden.bs.collapse", function () {
-    // Ничего не делаем при закрытии
-});
+
 
 // Получаем элемент с id "homework-list"
 const homeworkList = document.getElementById("homework-list");
