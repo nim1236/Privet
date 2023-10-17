@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="LOG.css">
+    <link rel="shortcut icon" type="image/x-icon" href="website.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Hunger_Games</title>
 </head>
@@ -12,7 +13,7 @@
     <div class="registration-box">
         <h1 class="custom-heading">Регистрация</h1>
         <div class="input-container">
-            <label class="input-label" for="login">Логин:</label>
+            <label class="input-label" for="login">Логин (email):</label>
             <input type="text" id="login" name="login">
         </div>
         <div class="input-container">
@@ -33,7 +34,11 @@
                   <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
                 </div>
                 <div class="toast-body">
-                  Привет, мир! Это тост-сообщение.
+                    Пароль должен содержать как минимум 1 заглавную букву<br>
+                    Пароль должен содержать как минимум 1 цифру<br>
+                    Пароль должен содержать как минимум 1 знак препинания<br>
+                    Пароль должен быть длиной не менее 8 символов<br>
+                    Логин должен содержать @gmail.com
                 </div>
               </div>
             </div>

@@ -16,6 +16,19 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Тень для сообщения */
 }
 
+.finish-button {
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.finish-button:hover {
+    background-color: #0056b3;
+}
+
 
 
 
