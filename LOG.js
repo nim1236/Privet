@@ -12,9 +12,13 @@ function redirectToLogin() {
         return; // Прерываем выполнение функции, так как логин не соответствует требованию
     }
 
-    var passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
-    if (!password.match(passwordRegex)) {
-        alert("Введите пароль правильно.");
+    var hasUppercase = /[A-Z]/.test(password);
+    var hasDigit = /\d/.test(password);
+    var hasSpecialChar = /[!@#$%^&*]/.test(password);
+    var isLongEnough = password.length >= 8;
+
+    if (!(hasUppercase && hasDigit && hasSpecialChar && isLongEnough)) {
+        alert("Пароль должен содержать как минимум 1 заглавную букву, 1 цифру, 1 знак препинания и быть длиной не менее 8 символов в рандомном порядке.");
         return; // Прерываем выполнение функции, так как пароль не соответствует требованию
     }
 
