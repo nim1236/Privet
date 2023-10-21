@@ -66,31 +66,18 @@ hw1Element.addEventListener("hidden.bs.collapse", function () {
     // Ничего не делаем при закрытии
 });
 
-// Получаем элемент Homework_2
-const homework2Button = document.getElementById("homework-2");
+// Находим элемент по его id
+const homework2Link = document.getElementById("homework2");
 
-// Обработчик события клика на Homework_2
-homework2Button.addEventListener("click", function () {
+// Функция для обработки клика на элементе Homework_2
+function handleClickOnHomework2() {
     alert("Вы кликнули на Homework_2");
-});
-
-
-
-// Получаем элемент с id "homework-list"
-const homeworkList = document.getElementById("homework-list");
-
-// Функция для обработки клика на элементе homework
-function handleClickOnHomework() {
-    alert("Вы кликнули на элемент homework");
 }
 
-// Получаем все элементы с классом "homework"
-const homeworkItems = document.querySelectorAll(".homework");
+// Добавляем обработчик события onclick для Homework_2
+homework2Link.addEventListener("click", handleClickOnHomework2);
 
-// Добавляем обработчик клика для каждого элемента homework
-homeworkItems.forEach(function(item) {
-    item.addEventListener("click", handleClickOnHomework);
-});
+
 
 const jsSuccessElements = document.querySelectorAll(".js.success");
 
