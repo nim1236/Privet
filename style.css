@@ -36,10 +36,14 @@ header {
     transition: color 0.3s;
 }
 .homework2 {
-    transition: color 0.3s;
     text-decoration: none; /* Убрать подчеркивание текста */
     margin-right: 20px;
     cursor: pointer;
+    color: gray;
+}
+
+.homework2:hover {
+    color: inherit; /* Наследовать цвет от родительского элемента */
 }
 
 .homework:hover {
