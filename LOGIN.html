@@ -19,6 +19,8 @@
         <div class="input-container">
             <label class="input-label" for="password">Пароль:</label>
             <input type="password" id="password" name="password">
+            <label class="input-pas" for="toggle-password">Показать пароль</label>
+            <input class="input-pas" type="checkbox" id="toggle-password">
         </div>
         <div class="button-container">
             <!-- Кнопка "Войти" с вызовом функции redirectToLogin() -->
@@ -34,11 +36,11 @@
                   <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
                 </div>
                 <div class="toast-body">
-                    Пароль должен содержать как минимум 1 заглавную букву<br>
-                    Пароль должен содержать как минимум 1 цифру<br>
-                    Пароль должен содержать как минимум 1 знак препинания<br>
-                    Пароль должен быть длиной не менее 8 символов<br>
-                    Логин должен содержать @gmail.com
+                    -Пароль должен содержать как минимум 1 заглавную букву(Как русскую, так и англискую)<br>
+                    -Пароль должен содержать как минимум 1 цифру<br>
+                    -Пароль должен содержать как минимум 1 знак препинания(!"()-?:;,)<br>
+                    -Пароль должен быть длиной не менее 8 символов<br>
+                    -Логин должен содержать @gmail.com
                 </div>
               </div>
             </div>

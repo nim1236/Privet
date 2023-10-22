@@ -14,18 +14,29 @@ function redirectToLogin() {
 
     var hasUppercase = /[A-Z]/.test(password);
     var hasDigit = /\d/.test(password);
-    var hasSpecialChar = /[!@#$%^&*]/.test(password);
+    var hasSpecialChar = /[!"()-?:;,]/.test(password);
     var isLongEnough = password.length >= 8;
+    var hasRussianUppercase = /[А-Я]/.test(password);
 
-    if (!(hasUppercase && hasDigit && hasSpecialChar && isLongEnough)) {
+    if (!(hasUppercase && hasDigit && hasSpecialChar && isLongEnough && hasRussianUppercase)) {
         alert("Введите пароль правильно.");
         return; // Прерываем выполнение функции, так как пароль не соответствует требованию
     }
 
     // Если все проверки прошли успешно, перенаправьтесь на другой сайт
     window.location.href = "LOGIN1.html";
+    document.getElementById('toggle-password').checked = false;
 }
+var password = document.getElementById('password');
+var togglePassword = document.getElementById('toggle-password');
 
+togglePassword.addEventListener('change', function () {
+  if (togglePassword.checked) {
+    password.type = 'text';
+  } else {
+    password.type = 'password';
+  }
+});
 // Получаем кнопку "Войти" по классу
 const loginButton = document.querySelector(".login-button");
 

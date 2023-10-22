@@ -24,7 +24,7 @@
     text-align: center;
     border-radius: 10px;
     width: 325px;
-    height: 300px;
+    height: 320px;
     margin-left: 500px;
     margin-top: -550px;
     
@@ -39,6 +39,7 @@
     margin-top: 20px;
     border-radius: 20px; /* Задайте радиус закругления */
     overflow: hidden; /* Обрежьте контейнер, чтобы скрыть углы */
+    
 }
 
 .label {
@@ -73,8 +74,18 @@ input {
     background-color: #007BFF;
     color: white;
     cursor: pointer;
+    margin-top: -10px;
 }
 
 .me-auto{
     font-size: 15px;
+}
+
+.input-pas{
+    color: white;
+    display: flex;
+    margin-left: 20px;
+}
+#toggle-password{
+    margin-top: -16px;
 }
