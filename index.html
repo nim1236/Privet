@@ -65,17 +65,13 @@
     <script>
         function checkAuthentication() {
           const cookies = document.cookie.split('; ');
-          let login, password;
           for (const cookie of cookies) {
             const [name, value] = cookie.split('=');
-            if (name === "login") {
-              login = decodeURIComponent(value);
-            } else if (name === "password") {
-              password = decodeURIComponent(value);
+            if (name === "userAuthenticated" && value === "true") {
+              return true;
             }
           }
-      
-          return login && password;
+          return false;
         }
       
         // Обработчик события для кнопки "homework_2" (Homework_2)
@@ -91,5 +87,12 @@
           }
         });
       </script>
+      Теперь, когда пользователь вводит логин и пароль на LOGIN.html, они сохраняются в куки, и затем при нажатии кнопки "Homework_2" на index.html проверяется, аутентифицирован ли пользователь. Если да, то он перенаправляется на LOGIN1.html, иначе на LOGIN.html.
+      
+      
+      
+      
+      
+      
 </body>
 </html>

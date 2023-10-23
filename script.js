@@ -89,8 +89,5 @@ jsSuccessElements.forEach(function(element) {
 
 
 
-hw2Button.addEventListener("click", function () {
-    
-    window.location.href = "LOGIN.html";
-});
+
 
