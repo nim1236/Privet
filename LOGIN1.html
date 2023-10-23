@@ -19,6 +19,34 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     
     <script src="LOG1.js"></script>
+    <script>
+        function checkAuthentication() {
+          const cookies = document.cookie.split('; ');
+          for (const cookie of cookies) {
+            const [name, value] = cookie.split('=');
+            if (name === "userAuthenticated" && value === "true") {
+              return true;
+            }
+          }
+          return false;
+        }
+      
+        const finishButton = document.querySelector('.finish-button');
+        finishButton.addEventListener('click', function () {
+          // Проверяем аутентификацию пользователя
+          if (checkAuthentication()) {
+            // Если пользователь аутентифицирован, позволяем завершить процесс
+            // Здесь вы можете добавить любое дополнительное действие, которое должно произойти после завершения.
+            // Например, перенаправление на другую страницу.
+            alert("Процесс завершен.");
+            // Здесь можно добавить перенаправление на другую страницу, если необходимо.
+            // window.location.href = "some_other_page.html";
+          } else {
+            // Если пользователь не аутентифицирован, перенаправляем его на страницу регистрации
+            window.location.href = "LOGIN.html";
+          }
+        });
+      </script>
 </body>
 </html>
 

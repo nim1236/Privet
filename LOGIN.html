@@ -54,5 +54,20 @@
     <script>
         document.cookie = "userAuthenticated=true; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/";
     </script>
+    <script>
+        // Получаем значения логина и пароля из полей ввода
+        const loginInput = document.getElementById("login");
+        const passwordInput = document.getElementById("password");
+        const loginValue = loginInput.value;
+        const passwordValue = passwordInput.value;
+      
+        // Проверяем, что логин и пароль не пустые
+        if (loginValue && passwordValue) {
+          // Сохраняем логин и пароль в куки
+          document.cookie = "login=" + encodeURIComponent(loginValue) + "; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/";
+          document.cookie = "password=" + encodeURIComponent(passwordValue) + "; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/";
+          document.cookie = "userAuthenticated=true; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/";
+        }
+      </script>
 </body>
 </html>
