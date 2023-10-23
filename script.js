@@ -94,26 +94,3 @@ hw2Button.addEventListener("click", function () {
     window.location.href = "LOGIN.html";
 });
 
-// Проверяем, авторизирован ли пользователь
-function checkAuthentication() {
-    const cookies = document.cookie.split('; ');
-    for (const cookie of cookies) {
-      const [name, value] = cookie.split('=');
-      if (name === "userAuthenticated" && value === "true") {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  // Обработчик события для кнопки "homework_2"
-  const homework2Button = document.querySelector('.homework_2');
-  homework2Button.addEventListener('click', function (event) {
-    event.preventDefault();
-    if (checkAuthentication()) {
-      window.location.href = "LOGIN1.html";
-    } else {
-      // Если пользователь не авторизован, перейдите на страницу "auth.html"
-      window.location.href = "LOGIN.html";
-    }
-  });

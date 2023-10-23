@@ -54,4 +54,4 @@ liveToastBtn.addEventListener("click", function () {
 });
 
 // После успешной авторизации
- document.cookie = "userAuthenticated=true; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/";
+ 
