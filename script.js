@@ -94,3 +94,43 @@ hw2Button.addEventListener("click", function () {
     window.location.href = "LOGIN.html";
 });
 
+function checkAuthentication() {
+    const cookies = document.cookie.split('; ');
+    for (const cookie of cookies) {
+      const [name, value] = cookie.split('=');
+      if (name === "userAuthenticated" && value === "true") {
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  // Обработчик события для кнопки "homework2"
+  const homework2Button = document.querySelector('#homework2');
+  homework2Button.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (checkAuthentication()) {
+      // Если пользователь аутентифицирован, перейдите на финальную страницу "FINAL.html"
+      window.location.href = "LOGIN1.html";
+    } else {
+      // Если пользователь не аутентифицирован, перейдите на страницу "LOGIN.html"
+      window.location.href = "LOGIN.html";
+    }
+  });
+  
+  // Ваш код аутентификации на странице "LOGIN.html"
+  const loginButton = document.querySelector('#loginButton');
+  loginButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    // Проверьте логин и пароль пользователя, и если они правильные, установите куки
+    // Для примера, устанавливаем куки "userAuthenticated" с значением "true"
+    document.cookie = "userAuthenticated=true";
+    // Перейдите на финальную страницу
+    window.location.href = "LOGIN1.html";
+  });
+  
+  
+  
+  
+  
+  
