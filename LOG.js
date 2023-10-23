@@ -23,8 +23,6 @@ function redirectToLogin() {
         return; // Прерываем выполнение функции, так как пароль не соответствует требованию
     }
 
-    // Если все проверки прошли успешно, перенаправьтесь на другой сайт
-    document.cookie = "userAuthenticated=true; path=/";
     window.location.href = "LOGIN1.html";
     document.getElementById('toggle-password').checked = false;
 }
