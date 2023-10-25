@@ -69,15 +69,15 @@
         const storedPassword = localStorage.getItem("password");
 
         const homework2Link = document.getElementById("homework2");
+        
         if (storedUsername && storedPassword) {
             // Если пользователь уже авторизован, перенаправляем на страницу LOGIN1.html
-            window.location.href = "LOGIN1.html";
-        } else {
-            // Если пользователь не авторизован, добавляем обработчик события на элемент с классом "homework_2"
             homework2Link.addEventListener("click", function (event) {
-                // Отменяем стандартное действие (переход по ссылке)
-                event.preventDefault();
-                // Перенаправляем на страницу регистрации
+                window.location.href = "LOGIN1.html";
+            });
+        } else {
+            // Если пользователь не авторизован, перенаправляем на страницу LOGIN.html
+            homework2Link.addEventListener("click", function (event) {
                 window.location.href = "LOGIN.html";
             });
         }
