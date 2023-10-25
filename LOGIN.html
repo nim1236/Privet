@@ -52,6 +52,11 @@
     
     <script src="LOG.js"></script>
     <script>
+        // Получаем значения из полей ввода
+        const usernameInput = document.getElementById("login");
+        const passwordInput = document.getElementById("password");
+        const login = usernameInput.value;
+        const password = passwordInput.value;
         localStorage.setItem("login", login);
         localStorage.setItem("password", password);
     </script>

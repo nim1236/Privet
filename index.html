@@ -63,25 +63,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     
     <script src="script.js"></script>
-    <script>
-        // Проверяем, был ли пользователь ранее авторизован
-        const storedUsername = localStorage.getItem("login");
-        const storedPassword = localStorage.getItem("password");
-
-        const homework2Link = document.getElementById("homework2");
-        
-        if (storedUsername && storedPassword) {
-            // Если пользователь уже авторизован, перенаправляем на страницу LOGIN1.html
-            homework2Link.addEventListener("click", function (event) {
-                window.location.href = "LOGIN1.html";
-            });
-        } else {
-            // Если пользователь не авторизован, перенаправляем на страницу LOGIN.html
-            homework2Link.addEventListener("click", function (event) {
-                window.location.href = "LOGIN.html";
-            });
-        }
-    </script>
 </body>
 </html>
 
