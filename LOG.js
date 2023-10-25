@@ -23,7 +23,7 @@ function redirectToLogin() {
         return; // Прерываем выполнение функции, так как пароль не соответствует требованию
     }
     window.location.href = "LOGIN1.html";
-    document.cookie = "homeworkCookie=1";
+    
     document.getElementById('toggle-password').checked = false;
 }
 var password = document.getElementById('password');
