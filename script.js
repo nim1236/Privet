@@ -73,8 +73,7 @@ function handleClickOnHomework2() {
     alert("Вы кликнули на Homework_2");
 }
 
-// Добавляем обработчик события onclick для Homework_2
-homework2Link.addEventListener("click", handleClickOnHomework2);
+
 
 
 
