@@ -87,22 +87,22 @@ jsSuccessElements.forEach(function(element) {
 
 
 
-// Получаем элемент кнопки "Homework_2"
+// Получаем элемент по идентификатору
 const homework2Link = document.getElementById("homework2");
 
-// Проверяем, был ли пользователь ранее авторизован
-const storedUsername = localStorage.getItem("login");
-const storedPassword = localStorage.getItem("password");
+// Добавляем обработчик событий
+homework2Link.addEventListener('click', function() {
+    // Получаем данные пользователя из localStorage
+    let user = JSON.parse(localStorage.getItem('user'));
 
-if (storedUsername && storedPassword) {
-    // Если пользователь уже авторизован, перенаправляем на страницу LOGIN1.html
-    homework2Link.addEventListener("click", function (event) {
+    if(user) {
+        // Если пользователь зарегистрирован, перенаправьте его на LOGIN1
         window.location.href = "LOGIN1.html";
-    });
-} else {
-    // Если пользователь не авторизован, перенаправляем на страницу LOGIN.html
-    homework2Link.addEventListener("click", function (event) {
+    } else {
+        // Если пользователь не зарегистрирован, перенаправьте его на LOGIN
         window.location.href = "LOGIN.html";
-    });
-}
+    }
+});
+
+
 
