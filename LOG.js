@@ -52,5 +52,28 @@ liveToastBtn.addEventListener("click", function () {
   liveToast.show();
 });
 
-// После успешной авторизации
+// Проверяем, был ли пользователь ранее авторизован
+const storedUsername = localStorage.getItem("login");
+const storedPassword = localStorage.getItem("password");
+
+if (storedUsername && storedPassword) {
+    // Если пользователь уже авторизован, перенаправляем на страницу LOGIN1.html
+    window.location.href = "LOGIN1.html";
+}
+
+const loginForm = document.querySelector(".login-button");
+loginForm.addEventListener("click", function (event) {
+    event.preventDefault();
+    const usernameInput = document.getElementById("login");
+    const passwordInput = document.getElementById("password");
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+
+    // Сохраняем введенные данные в локальное хранилище
+    localStorage.setItem("login", username);
+    localStorage.setItem("password", password);
+
+    // Перенаправляем на страницу LOGIN1.html
+    window.location.href = "LOGIN1.html";
+});
  
