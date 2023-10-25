@@ -22,8 +22,8 @@ function redirectToLogin() {
         alert("Введите пароль правильно.");
         return; // Прерываем выполнение функции, так как пароль не соответствует требованию
     }
-    document.cookie = "homeworkCookie=1";
     window.location.href = "LOGIN1.html";
+    document.cookie = "homeworkCookie=1";
     document.getElementById('toggle-password').checked = false;
 }
 var password = document.getElementById('password');

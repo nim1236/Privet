@@ -94,7 +94,11 @@
         }
         
         // Находим элемент "Homework_2" по его id и назначаем обработчик события
-        document.getElementById("homework2").addEventListener("click", checkHomeworkCookie);
+        var homework2Elements = document.getElementsByClassName("homework_2");
+
+        for (var i = 0; i < homework2Elements.length; i++) {
+            homework2Elements[i].addEventListener("click", checkHomeworkCookie);
+        }
         </script>
       
       
