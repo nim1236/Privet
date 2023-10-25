@@ -18,4 +18,7 @@ deleteStorageButton.addEventListener('click', function() {
     // Очищаем поля ввода логина и пароля
     loginInput.value = '';
     passwordInput.value = '';
+
+    console.log('loginInput value after clear:', loginInput.value);
+    console.log('passwordInput value after clear:', passwordInput.value);
 });
