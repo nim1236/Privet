@@ -26,18 +26,18 @@ function redirectToLogin() {
     
     document.getElementById('toggle-password').checked = false;
 }
-var password = document.getElementById('password');
-var togglePassword = document.getElementById('toggle-password');
+var passwordField = document.getElementById('password');
+    var togglePassword = document.getElementById('toggle-password');
 
-togglePassword.addEventListener('change', function () {
-    loginButton.disabled = true;
-  if (togglePassword.checked) {
-    password.type = 'text';
-  } else {
-    password.type = 'password';
-  }
-  loginButton.disabled = false;
-});
+    togglePassword.addEventListener('change', function () {
+        passwordField.disabled = true;
+        if (togglePassword.checked) {
+            passwordField.type = 'text';
+        } else {
+            passwordField.type = 'password';
+        }
+        passwordField.disabled = false;
+    });
 // Получаем кнопку "Войти" по классу
 const loginButton = document.querySelector(".login-button");
 
@@ -51,6 +51,5 @@ var liveToast = new bootstrap.Toast(document.getElementById("liveToast"));
 liveToastBtn.addEventListener("click", function () {
   liveToast.show();
 });
-
 
  
