@@ -22,6 +22,9 @@ function redirectToLogin() {
         alert("Введите пароль правильно.");
         return; // Прерываем выполнение функции, так как пароль не соответствует требованию
     }
+    // Сохраняем информацию о пользователе в localStorage
+    localStorage.setItem("user", JSON.stringify({ login: login, password: password }));
+
     window.location.href = "LOGIN1.html";
     
     document.getElementById('toggle-password').checked = false;

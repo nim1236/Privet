@@ -87,6 +87,26 @@ jsSuccessElements.forEach(function(element) {
 
 
 
+// Получаем элемент кнопки "Homework_2"
+const homework2Button = document.getElementById("homework2");
+
+// Добавляем обработчик событий при клике на Homework_2
+homework2Button.addEventListener('click', function() {
+    // Проверяем, есть ли информация о пользователе в localStorage
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+        // Если пользователь авторизован, перенаправляем его на LOGIN1
+        window.location.href = "LOGIN1.html";
+    } else {
+        // Если пользователь не авторизован, перенаправляем его на LOGIN
+        window.location.href = "LOGIN.html";
+    }
+});
+
+
+
+
 
 
 
