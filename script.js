@@ -90,19 +90,18 @@ jsSuccessElements.forEach(function(element) {
 // Получаем элемент по идентификатору
 const homework2Link = document.getElementById("homework2");
 
+// Проверяем, зарегистрирован ли пользователь
+const isUserRegistered = JSON.parse(localStorage.getItem('userRegistered'));
+
+// Если пользователь не зарегистрирован (первый визит), перенаправляем на LOGIN.html
+if (!isUserRegistered) {
+    window.location.href = "LOGIN.html";
+}
+
 // Добавляем обработчик событий
 homework2Link.addEventListener('click', function() {
-    // Получаем данные пользователя из localStorage
-    
-
-    if(user) {
-        // Если пользователь зарегистрирован, перенаправьте его на LOGIN1
-        window.location.href = "LOGIN1.html";
-    } else {
-        // Если пользователь не зарегистрирован, перенаправьте его на LOGIN
-        window.location.href = "LOGIN.html";
-    }
-    let user = JSON.parse(localStorage.getItem('user'));
+    // Если пользователь зарегистрирован, перенаправляем на LOGIN1.html
+    window.location.href = "LOGIN1.html";
 });
 
 
