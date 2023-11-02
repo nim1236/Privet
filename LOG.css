@@ -89,3 +89,7 @@ input {
 #toggle-password{
     margin-top: -16px;
 }
+
+::-ms-reveal {
+    display: none;
+}
