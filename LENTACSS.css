@@ -1,0 +1,153 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Стили для header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    color: gray;
+}
+
+#logo {
+    width: 100px;
+    height: 110px;
+    cursor: pointer;
+}
+
+#list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 50px;
+}
+.block {
+    border: 1px solid #000;
+    padding: 10px 20px; /* Отступы слева и справа для контейнера */
+    margin-top: 10px;
+    width: auto; /* Отключите максимальную ширину */
+}
+.homework {
+    margin-right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.homework2 {
+    text-decoration: none; /* Убрать подчеркивание текста */
+    margin-right: 20px;
+    cursor: pointer;
+    color: gray;
+}
+
+.homework2:hover {
+    color: inherit; /* Наследовать цвет от родительского элемента */
+}
+
+.homework:hover {
+    color: rgb(0, 0, 255);
+}
+
+.success {
+    background-color: #5deb62;
+    color: rgb(0, 0, 0);
+    margin: 5px 0;
+    max-width: 700px; /* Максимальная ширина */
+    max-height: 100px; /* Максимальная высота */
+    margin-right: 10px;
+    list-style: none;
+}
+.success1 {
+    background-color: red;
+    color: rgb(255, 255, 255);
+    margin: 5px 0;
+    max-width: 700px; /* Максимальная ширина */
+    max-height: 100px; /* Максимальная высота */
+    list-style: none;
+}
+.warning {
+    background-color: #fffb09;
+    color: rgb(0, 0, 0);
+    margin: 5px 0;
+    max-width: 700px; /* Максимальная ширина */
+    max-height: 100px; /* Максимальная высота */
+    list-style: none;
+    margin-right: 10px;
+}
+.html {
+    background-color: #139724;
+    color: white;
+    padding: 5px 10px;
+    max-height: 100px; /* Максимальная высота */
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    width: 60px;
+}
+
+.css {
+    background-color: #8d15c5;
+    color: white;
+    padding: 5px 10px;
+    max-height: 100px; /* Максимальная высота */
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    width: 60px;
+}
+
+.js {
+    background-color: orange;
+    color: white;
+    padding: 5px 10px;
+    max-height: 100px; /* Максимальная высота */
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    width: 60px;
+}
+
+.arrow {
+    margin-left: 35px;
+}
+
+.btn-primary {
+    margin-left: 35px;
+}
+
+.count {
+    margin-left: 25px;
+    padding: 5px 0px; /* Изменяем внутренние отступы, при необходимости */
+}
+
+.btn-secondary {
+    margin-left: 35px;
+}
+.btn-danger{
+    margin-left: 20px;
+}
+.btn-success {
+    margin-left: 35px;
+}
+#plus-btn {
+    background-color: green;
+    color: white;
+    margin-left: -15px; /* Изменяем отступ слева */
+    margin-right: -20px; /* Добавляем отступ справа (при необходимости) */
+}
+
+#minus-btn {
+    background-color: red;
+    color: white;
+    margin-left: 35px;
+}
+.block {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-top: 10px;
+    display: inline-block; /* Сделаем контейнер вокруг текста */
+}
+
+

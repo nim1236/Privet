@@ -70,7 +70,7 @@ input {
 
 .login-button {
     border-radius: 20px; /* Задайте радиус закругления для кнопки */
-    padding: 10px 20px; /* Измените отступы, при необходимости */
+    padding: 10px 20px; /* Измените отступы */
     background-color: #007BFF;
     color: white;
     cursor: pointer;
