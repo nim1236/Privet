@@ -1,69 +1,82 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="website.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Hunger_Games</title>
-</head>
-<body>
-    <header>
-        <a href="http://voenmeh.ru" target="_self">
-            <img src="logo_bgtu_2_2.svg" alt="Hunger_Games" id="logo">
-        </a>
-        <div id="homework-list">
-            <span class="homework">Homework_1</span>
-            <span class="homework">
-                <a class="homework_2" id="homework2" target="_self" style="text-decoration: none; color: inherit !important;">Homework_2</a>
-            </span>
-            <span class="homework">Homework_3</span>
-        </div>
-    </header>
-    <!-- Кнопка "hw1" -->
-<!-- Кнопка "hw1" с атрибутом data-bs-toggle для активации выпадающего списка -->
-<button class="btn btn-secondary btn-lg dropdown-toggle" id="hw1" data-bs-toggle="collapse" data-bs-target="#collapse-1">HW1</button>
+<div class="container" id="container"> 
+    <div class="feed" id="feed"></div> 
+    <div class="loader" id="loader"></div> 
+</div> 
+<script> 
+    const feed = document.getElementById('feed'); 
+    const itemsPerPage = 20; 
+    let currentPage = 1; 
+    let loading = false; 
+    let data = []; // Здесь будут храниться данные из JSON-файла 
+    let endOfData = false; // Изначально считаем, что данных достаточно 
 
+    const loader = document.getElementById('loader'); 
 
-<!-- Выпадающий список -->
-<div class="collapse" id="collapse-1">
-    <div class="block">
-        <div class="task">
-            <h2><div class="arrow">html+css</div></h2>
-            <ul>
-                <li class="success"><div class="html">html</div>Добавить внутрь всех h2 следующий код: &lt;div class="arrow"&gt;&lt;/div&gt;</li>
-                <li class="success"><div class="css">css</div>Задать цвет хедера</li>
-                <li class="success"><div class="css">css</div>Задать цвет рабочей области</li>
-                <li class="warning"><div class="css">css</div></li>
-                <li class="success"><div class="css">css</div>Создать класс success</li>
-                <li class="success"><div class="html">html</div>Добавить логотип</li>
-            </ul>
-        </div>
-        <h2><div class="arrow">js</div></h2>
-        <ul>
-            <li class="success1"><div class="js">js</div>Сделать счетчик с 2 кнопками (+ -) и числом count</li>
-            <li class="success1"><div class="js">js</div>Сделать alert при клике на hw-1 в хедере</li>
-            <li class="success1"><div class="js">js</div>Сделать alert при клике на ссылку меню</li>
-        </ul>    
-        <div>
-            <!-- Кнопка "+" для увеличения счетчика -->
-            <button class="btn btn-success plus-btn">+</button>
-            <!-- Элемент для отображения счетчика -->
-            <span class="count">Счетчик: <span class="counter">0</span></span>
-            <!-- Кнопка "-" для уменьшения счетчика -->
-            <button class="btn btn-danger minus-btn">-</button>
-            <!-- Кнопка "Сбросить" -->
-            <button class="btn btn-secondary reset-btn">Сбросить</button>
-        </div>
-    </div>
-</div>
+// Загрузка данных из JSON-файла 
+fetch('ID.json') 
+.then(response => response.json()) 
+.then(jsonData => { 
+    data = jsonData; // Сохраняем данные из JSON-файла 
 
-<!-- Подключение необходимых скриптов для работы с Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
-    
-</body>
-</html>
+    loader.style.display = 'none'; // Скрыть анимацию загрузки после загрузки данных 
+    loadMoreItems(); // Загружаем первую порцию данных 
+}); 
 
-    
+    function createFeedItem(item) { 
+        const feedItem = document.createElement('div'); 
+        feedItem.classList.add('feed'); 
+        feedItem.innerHTML = ` 
+            <strong>User ID: ${item.userId}</strong><br> 
+            <strong>ID: ${item.id}</strong><br> 
+            <strong>Title: ${item.title}</strong><br> 
+            ${item.body} 
+        `; 
+        return feedItem; 
+    } 
+
+    function loadMoreItems() { 
+        if (loading || endOfData) return; 
+
+loading = true; 
+loader.style.display = 'block'; // Показать анимацию загрузки перед загрузкой данных 
+ 
+        const startIndex = (currentPage - 1) * itemsPerPage; 
+        const endIndex = Math.min(startIndex + itemsPerPage, data.length); 
+ 
+        setTimeout(() => { 
+    for (let i = startIndex; i < endIndex; i++) { 
+        const feedItem = createFeedItem(data[i]); 
+        feed.appendChild(feedItem); 
+    } 
+
+    currentPage++; 
+    loading = false; 
+    if (endIndex >= data.length) { 
+        endOfData = true; 
+        loader.style.display = 'none'; // Скрыть анимацию загрузки, так как данных больше нет 
+    } 
+    loader.style.display = 'none'; // Скрыть анимацию загрузки, так как данных больше нет 
+    observeLastItem(); 
+}, 1000); 
+} 
+
+    function observeLastItem() { 
+        const lastItem = feed.lastElementChild; 
+        observer.observe(lastItem); 
+    } 
+
+    let options = { 
+        root: null, 
+        rootMargin: "0px", 
+        threshold: 1.0, 
+    }; 
+ 
+    let observer = new IntersectionObserver((entries, observer) => { 
+        entries.forEach(entry => { 
+            if (entry.isIntersecting) { 
+                observer.unobserve(entry.target); 
+                loadMoreItems(); 
+            } 
+        }); 
+    }, options); 
+</script>
