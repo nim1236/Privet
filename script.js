@@ -104,6 +104,14 @@ homework2Button.addEventListener('click', function() {
     }
 });
 
+// Получаем ссылку на кнопку по ее id
+var homework3Button = document.getElementById('homework3');
+
+// Добавляем обработчик события 'click'
+homework3Button.addEventListener('click', function() {
+    // Перенаправляем пользователя на страницу LENTA.html
+    window.location.href = 'LENTA.html';
+});
 
 
 
