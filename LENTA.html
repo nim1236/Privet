@@ -1,82 +1,92 @@
-<div class="container" id="container"> 
-    <div class="feed" id="feed"></div> 
-    <div class="loader" id="loader"></div> 
-</div> 
-<script> 
-    const feed = document.getElementById('feed'); 
-    const itemsPerPage = 20; 
-    let currentPage = 1; 
-    let loading = false; 
-    let data = []; // Здесь будут храниться данные из JSON-файла 
-    let endOfData = false; // Изначально считаем, что данных достаточно 
-
-    const loader = document.getElementById('loader'); 
-
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="LENTACSS.css"> 
+</head> 
+<body> 
+    <div class="container" id="container"> 
+        <div class="feed" id="feed"></div> 
+        <div class="loader" id="loader"></div> 
+    </div> 
+    <script> 
+        const feed = document.getElementById('feed'); 
+        const itemsPerPage = 20; 
+        let currentPage = 1; 
+        let loading = false; 
+        let data = []; // Здесь будут храниться данные из JSON-файла 
+        let endOfData = false; // Изначально считаем, что данных достаточно 
+ 
+        const loader = document.getElementById('loader'); 
+ 
 // Загрузка данных из JSON-файла 
 fetch('ID.json') 
-.then(response => response.json()) 
-.then(jsonData => { 
-    data = jsonData; // Сохраняем данные из JSON-файла 
-
-    loader.style.display = 'none'; // Скрыть анимацию загрузки после загрузки данных 
-    loadMoreItems(); // Загружаем первую порцию данных 
-}); 
-
-    function createFeedItem(item) { 
-        const feedItem = document.createElement('div'); 
-        feedItem.classList.add('feed'); 
-        feedItem.innerHTML = ` 
-            <strong>User ID: ${item.userId}</strong><br> 
-            <strong>ID: ${item.id}</strong><br> 
-            <strong>Title: ${item.title}</strong><br> 
-            ${item.body} 
-        `; 
-        return feedItem; 
-    } 
-
-    function loadMoreItems() { 
-        if (loading || endOfData) return; 
-
-loading = true; 
-loader.style.display = 'block'; // Показать анимацию загрузки перед загрузкой данных 
+    .then(response => response.json()) 
+    .then(jsonData => { 
+        data = jsonData; // Сохраняем данные из JSON-файла 
  
-        const startIndex = (currentPage - 1) * itemsPerPage; 
-        const endIndex = Math.min(startIndex + itemsPerPage, data.length); 
+        loader.style.display = 'none'; // Скрыть анимацию загрузки после загрузки данных 
+        loadMoreItems(); // Загружаем первую порцию данных 
+    }); 
  
-        setTimeout(() => { 
-    for (let i = startIndex; i < endIndex; i++) { 
-        const feedItem = createFeedItem(data[i]); 
-        feed.appendChild(feedItem); 
-    } 
-
-    currentPage++; 
-    loading = false; 
-    if (endIndex >= data.length) { 
-        endOfData = true; 
+        function createFeedItem(item) { 
+            const feedItem = document.createElement('div'); 
+            feedItem.classList.add('feed'); 
+            feedItem.innerHTML = ` 
+                <strong>User ID: ${item.userId}</strong><br> 
+                <strong>ID: ${item.id}</strong><br> 
+                <strong>Title: ${item.title}</strong><br> 
+                ${item.body} 
+            `; 
+            return feedItem; 
+        } 
+ 
+        function loadMoreItems() { 
+            if (loading || endOfData) return; 
+ 
+    loading = true; 
+    loader.style.display = 'block'; // Показать анимацию загрузки перед загрузкой данных 
+     
+            const startIndex = (currentPage - 1) * itemsPerPage; 
+            const endIndex = Math.min(startIndex + itemsPerPage, data.length); 
+     
+            setTimeout(() => { 
+        for (let i = startIndex; i < endIndex; i++) { 
+            const feedItem = createFeedItem(data[i]); 
+            feed.appendChild(feedItem); 
+        } 
+ 
+        currentPage++; 
+        loading = false; 
+        if (endIndex >= data.length) { 
+            endOfData = true; 
+            loader.style.display = 'none'; // Скрыть анимацию загрузки, так как данных больше нет 
+        } 
         loader.style.display = 'none'; // Скрыть анимацию загрузки, так как данных больше нет 
-    } 
-    loader.style.display = 'none'; // Скрыть анимацию загрузки, так как данных больше нет 
-    observeLastItem(); 
-}, 1000); 
+        observeLastItem(); 
+    }, 1000); 
 } 
-
-    function observeLastItem() { 
-        const lastItem = feed.lastElementChild; 
-        observer.observe(lastItem); 
-    } 
-
-    let options = { 
-        root: null, 
-        rootMargin: "0px", 
-        threshold: 1.0, 
-    }; 
  
-    let observer = new IntersectionObserver((entries, observer) => { 
-        entries.forEach(entry => { 
-            if (entry.isIntersecting) { 
-                observer.unobserve(entry.target); 
-                loadMoreItems(); 
-            } 
-        }); 
-    }, options); 
-</script>
+        function observeLastItem() { 
+            const lastItem = feed.lastElementChild; 
+            observer.observe(lastItem); 
+        } 
+ 
+        let options = { 
+            root: null, 
+            rootMargin: "0px", 
+            threshold: 1.0, 
+        }; 
+     
+        let observer = new IntersectionObserver((entries, observer) => { 
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) { 
+                    observer.unobserve(entry.target); 
+                    loadMoreItems(); 
+                } 
+            }); 
+        }, options); 
+    </script> 
+</body> 
+</html>
