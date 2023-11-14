@@ -40,13 +40,13 @@
     border: 2px solid #FFF; 
     padding: 15px;
     margin: 15px 0;
-    background-color: #666;
+    background-color: #b4b4b4;
     color: #FFF;
     border-radius: 10px;
 }
 
 .feed:nth-child(odd) {
-    background-color: #444;
+    background-color: #333333;
 }
  
 .loader {
