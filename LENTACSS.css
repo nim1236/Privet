@@ -46,7 +46,7 @@
 }
 
 .feed:nth-child(odd) {
-    background-color: #666; /* Фон для нечетных элементов */
+    background-color: #6b52a5; /* Фон для нечетных элементов */
 }
  
 .loader {
