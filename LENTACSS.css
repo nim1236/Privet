@@ -38,7 +38,7 @@
 .feed {
     padding: 15px;
     margin: 15px 0;
-    background-color: #444; /* Фон для четных элементов */
+    background-color: transparent; /* Прозрачный фон */
     color: #FFF;
     border-radius: 10px;
     border: none; /* Убираем обводку у каждого элемента */
