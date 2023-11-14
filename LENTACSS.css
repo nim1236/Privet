@@ -37,12 +37,15 @@
 }
 
 .feed {
+    border: 2px solid #FFF; 
     padding: 15px;
     margin: 15px 0;
-    background-color: transparent; /* Прозрачный фон */
+    background-color: #444; /* Фон для четных элементов */
     color: #FFF;
     border-radius: 10px;
-    border: none; /* Убираем обводку у каждого элемента */
+}
+.feed:nth-child(odd) {
+    background-color: #666; /* Фон для нечетных элементов */
 }
 
 .loader {
