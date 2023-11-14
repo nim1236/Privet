@@ -37,13 +37,14 @@
 }
 
 .feed {
-    border: 2px solid #FFF; 
+    border: 2px solid white; /* Белая обводка вокруг статей */
     padding: 15px;
     margin: 15px 0;
     background-color: #444; /* Фон для четных элементов */
     color: #FFF;
     border-radius: 10px;
 }
+
 .feed:nth-child(odd) {
     background-color: #666; /* Фон для нечетных элементов */
 }
