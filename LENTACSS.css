@@ -40,13 +40,13 @@
     border: 2px solid #FFF; 
     padding: 15px;
     margin: 15px 0;
-    background-color: #bd5d5d; /* Фон для четных элементов */
+    background-color: #444; /* Фон для четных элементов */
     color: #FFF;
     border-radius: 10px;
 }
 
 .feed:nth-child(odd) {
-    background-color: #6b52a5; /* Фон для нечетных элементов */
+    background-color: #666; /* Фон для нечетных элементов */
 }
  
 .loader {
