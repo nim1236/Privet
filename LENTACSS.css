@@ -19,7 +19,7 @@
     font-family: 'Raleway', sans-serif;
   color: #000;    
   }
-  html, body {
+ html, body {
     min-height: 100%;
     background: linear-gradient(#123 30%, #667);
 }
@@ -40,13 +40,13 @@
     border: 2px solid #FFF; 
     padding: 15px;
     margin: 15px 0;
-    background-color: #b4b4b4;
+    background-color: #444; /* Фон для четных элементов */
     color: #FFF;
     border-radius: 10px;
 }
 
 .feed:nth-child(odd) {
-    background-color: #333333;
+    background-color: #666; /* Фон для нечетных элементов */
 }
  
 .loader {
