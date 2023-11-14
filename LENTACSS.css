@@ -40,7 +40,7 @@
     border: 2px solid #FFF; 
     padding: 15px;
     margin: 15px 0;
-    background-color: #444; /* Фон для четных элементов */
+    background-color: #bd5d5d; /* Фон для четных элементов */
     color: #FFF;
     border-radius: 10px;
 }
