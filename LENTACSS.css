@@ -35,7 +35,9 @@
     
     min-height: 100vh; /* Устанавливаем минимальную высоту равной высоте видового окна */
 }
-
+.NAD{
+    text-align: center;
+}
 .feed {
     border: 2px solid white; /* Белая обводка вокруг статей */
     padding: 15px;
