@@ -69,11 +69,12 @@
     float: left; 
 }
 .kit2 img{
-    margin-right: -140px;
+    margin-top: 100px;
+    margin-right: -160px;
     width: 20vw; /* Используйте 20% ширины видового экрана */
     height: 90vh; /* Используйте 15% высоты видового экрана */
-    object-fit: cover; /* Подгоняем изображение в указанный размер с сохранением пропорций */
-    position: static; /* Используем position: static */
+    
+    
 }
 .kiti2{
     float: right; 
