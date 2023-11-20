@@ -24,14 +24,16 @@
     background: linear-gradient(#123 30%, #667);
     
 }
-
+.container1{
+    
+}
 .container {
-    outline: none;
+    
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: 0; 
+    
     
     min-height: 100vh; /* Устанавливаем минимальную высоту равной высоте видового окна */
 }
@@ -47,15 +49,20 @@
     border-radius: 10px;
     text-align: center;
 }
+
 .soika img{
-    width: 250px; /* Устанавливаем ширину изображения */
-    height: 176px; /* Устанавливаем высоту изображения */
+    max-width: 250px; /* Устанавливаем ширину изображения */
+    
+    max-height: 176px; /* Устанавливаем высоту изображения */
     object-fit: cover; /* Подгоняем изображение в указанный размер с сохранением пропорций */
     
 }
+img {
+    max-width: 100%;
+}
 .kit img{
-    width: 200px; /* Устанавливаем ширину изображения */
-    height: 300px; /* Устанавливаем высоту изображения */
+    max-width: 200px; /* Устанавливаем ширину изображения */
+    max-height: 300px; /* Устанавливаем высоту изображения */
     object-fit: cover; /* Подгоняем изображение в указанный размер с сохранением пропорций */
     position: static; /* Используем position: static */
 }
@@ -64,8 +71,8 @@
     float: left; 
 }
 .kit2 img{
-    width: 173; /* Устанавливаем ширину изображения */
-    height: 400px; /* Устанавливаем высоту изображения */
+    max-width: 173; /* Устанавливаем ширину изображения */
+    max-height: 400px; /* Устанавливаем высоту изображения */
     object-fit: cover; /* Подгоняем изображение в указанный размер с сохранением пропорций */
     position: static; /* Используем position: static */
 }
@@ -73,16 +80,14 @@
     float: right; 
 }
 .left-soika {
-    width: 250px;
     float: left; /* Выравнивание "soika" слева */
     position: static; /* Используем position: static */
 }
 
 .right-soika {
-    width: 250px;
+    max-width: 250px;
     transform: scaleX(-1); /* Отзеркалить по горизонтали */
     float: right; /* Выравнивание "soika" справа */
-    position: static; /* Используем position: static */
 }
 
 
