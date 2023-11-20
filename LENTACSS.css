@@ -47,10 +47,6 @@
     border-radius: 10px;
 }
 
-.feed:nth-child(odd) {
-    background-color: #666; /* Фон для нечетных элементов */
-}
-
 .loader {
     position: relative;
     top: 99%;
