@@ -39,12 +39,13 @@
     text-align: center;
 }
 .feed {
-    border: none; /* Белая обводка вокруг статей */
+    border: 2px solid white;
     padding: 15px;
     margin: 15px 0;
     background-color: 0; /* Фон для четных элементов */
     color: #FFF;
     border-radius: 10px;
+
 }
 
 .loader {
