@@ -45,7 +45,7 @@
     background-color: 0; /* Фон для четных элементов */
     color: #FFF;
     border-radius: 10px;
-
+    text-align: center;
 }
 .soika img{
     width: 250px; /* Устанавливаем ширину изображения */
@@ -60,6 +60,7 @@
     /* Дополнительные стили по вашему выбору */
 }
 .kiti{
+    margin-left: 10px;
     float: left; /* Выравнивание "soika" слева */
 }
 .kit2 img{
