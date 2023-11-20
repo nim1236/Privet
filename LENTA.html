@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="LENTACSS.css"> 
 </head> 
 <body> 
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="MYZ.mp3" type="audio/mp3">
+    </audio>
     <div class="soika left-soika"> <!-- Блок слева -->
         <img src="soika.png" alt="Soika слева">
     </div>
@@ -61,6 +64,10 @@
     </div> 
     
     <script> 
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('backgroundMusic');
+            audio.play();
+        });
         const feed = document.getElementById('feed'); 
         const itemsPerPage = 20; 
         let currentPage = 1; 

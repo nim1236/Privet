@@ -51,36 +51,38 @@
     width: 250px; /* Устанавливаем ширину изображения */
     height: 176px; /* Устанавливаем высоту изображения */
     object-fit: cover; /* Подгоняем изображение в указанный размер с сохранением пропорций */
-    /* Дополнительные стили по вашему выбору */
+    
 }
 .kit img{
     width: 200px; /* Устанавливаем ширину изображения */
     height: 300px; /* Устанавливаем высоту изображения */
     object-fit: cover; /* Подгоняем изображение в указанный размер с сохранением пропорций */
-    /* Дополнительные стили по вашему выбору */
+    position: static; /* Используем position: static */
 }
 .kiti{
     margin-left: 10px;
-    float: left; /* Выравнивание "soika" слева */
+    float: left; 
 }
 .kit2 img{
     width: 173; /* Устанавливаем ширину изображения */
     height: 400px; /* Устанавливаем высоту изображения */
     object-fit: cover; /* Подгоняем изображение в указанный размер с сохранением пропорций */
-    /* Дополнительные стили по вашему выбору */
+    position: static; /* Используем position: static */
 }
 .kiti2{
-    float: right; /* Выравнивание "soika" слева */
+    float: right; 
 }
 .left-soika {
     width: 250px;
     float: left; /* Выравнивание "soika" слева */
+    position: static; /* Используем position: static */
 }
 
 .right-soika {
     width: 250px;
     transform: scaleX(-1); /* Отзеркалить по горизонтали */
     float: right; /* Выравнивание "soika" справа */
+    position: static; /* Используем position: static */
 }
 
 
