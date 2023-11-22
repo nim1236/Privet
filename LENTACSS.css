@@ -54,6 +54,11 @@
     background-size: cover; /* Регулируйте размер фонового изображения по мере необходимости */
     background-size: 100% 100%;
 }
+.feed:nth-child(even):not(:first-child) {
+    background-image: url('Gi.gif'); /* Добавьте здесь URL фонового изображения */
+    background-size: cover; /* Регулируйте размер фонового изображения по мере необходимости */
+    background-size: 100% 100%;
+}
 .soika img{
     margin-top: 10px;
     width: 20vw; /* Используйте 20% ширины видового экрана */
