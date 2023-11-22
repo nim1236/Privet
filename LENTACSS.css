@@ -49,7 +49,7 @@
     border-radius: 10px;
     text-align: center;
 }
-.feed:nth-child(odd){
+.feed:nth-child(odd):not(:first-child) {
     background-image: url('Gi.gif'); /* Добавьте здесь URL фонового изображения */
     background-size: cover; /* Регулируйте размер фонового изображения по мере необходимости */
     background-size: 100% 100%;
