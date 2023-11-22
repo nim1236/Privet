@@ -41,6 +41,7 @@
 .feed {
     background-image: url('Gi.gif'); /* Добавьте здесь URL фонового изображения */
     background-size: cover; /* Регулируйте размер фонового изображения по мере необходимости */
+    background-size: 100% 100%;
     border: 2px solid white;
     padding: 15px;
     margin: 15px 0;
