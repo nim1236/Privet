@@ -26,7 +26,7 @@
 }
 
 .container {
-    
+    background-color: 0; /* Фон для четных элементов */
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
@@ -39,19 +39,21 @@
     text-align: center;
 }
 .feed {
-    background-image: url('Gi.gif'); /* Добавьте здесь URL фонового изображения */
-    background-size: cover; /* Регулируйте размер фонового изображения по мере необходимости */
-    background-size: 100% 100%;
+    
     border: 2px solid white;
-    width: 50%;
+    
     padding: 15px;
     margin: 0 auto; /* Добавлено для выравнивания по центру */
-    background-color: 0; /* Фон для четных элементов */
+    
     color: #FFF;
     border-radius: 10px;
     text-align: center;
 }
-
+.feed:nth-child(odd){
+    background-image: url('Gi.gif'); /* Добавьте здесь URL фонового изображения */
+    background-size: cover; /* Регулируйте размер фонового изображения по мере необходимости */
+    background-size: 100% 100%;
+}
 .soika img{
     margin-top: 10px;
     width: 20vw; /* Используйте 20% ширины видового экрана */
