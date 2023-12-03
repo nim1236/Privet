@@ -19,7 +19,7 @@ new Vue({
     },
     methods: {
         
-        generateRandomGun() {
+        generateRandomStas() {
             // Массив возможных значений для свойства gun
             const statu = ['Новый','Ожидание','Выполнен'];
             // Выбираем случайный элемент из массива guns
@@ -57,7 +57,7 @@ new Vue({
                 const newOrder = {
                     id: this.orders.length + 1,
                     orderNumber: '00' + (this.orders.length + 1),
-                    status: 'Новый',
+                    status: this.generateRandomStas(),
                     amount: this.generateRandomAmount(),
                     district: this.generateRandomAmount2(),
                     gun: this.generateRandomGun(),
