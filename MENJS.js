@@ -18,7 +18,13 @@ new Vue({
         }
     },
     methods: {
-        
+        deleteOrder(orderId) {
+            const confirmed = confirm('Вы уверены, что хотите удалить текущий заказ?');
+            if (confirmed) {
+                this.orders = this.orders.filter(order => order.id !== orderId);
+                this.saveOrders();
+            }
+        },
         generateRandomStas() {
             // Массив возможных значений для свойства gun
             const statu = ['Новый','Ожидание','Выполнен'];

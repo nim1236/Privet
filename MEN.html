@@ -31,8 +31,10 @@
                     <strong>Вы приобрели оружие:</strong> {{ order.gun }}
                 </div>
             </div>
-            <div>
-                <button id="pere-order-btn" @click="renameOrder(order.id)">Переименовать</button>
+            <div class="buttons-container">
+                <button id="abc1" @click="renameOrder(order.id)">Переименовать</button>
+                <div style="margin-top: 10px;"></div>
+                <button id="abc2" @click="deleteOrder(order.id)">Удалить текущий заказ</button>
             </div>
         </div>
         <button id="add-order-btn" @click="addNewOrder">Добавить новый заказ</button>

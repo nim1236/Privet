@@ -50,3 +50,31 @@ body {
     border: none;
     cursor: pointer;
 }
+#tec-order-btn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    
+    color: white;
+}
+#abc2 {
+    
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#abc1 {
+    
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
