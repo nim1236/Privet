@@ -11,13 +11,14 @@ new Vue({
         } else {
             // Если в localStorage нет данных, добавляем начальные заказы
             this.orders = [
-                { id: 1, orderNumber: '001', status: 'В обработке', amount: 12 ,district:0,gun:'голые(но сильные) руки'},
-                { id: 2, orderNumber: '002', status: 'Выполнен', amount: 13 ,district:0,gun:'голые(но сильные) руки'},
+                { id: 1,igra:this.generateRandomAmount3(), orderNumber: '001', status: 'В обработке', amount: 12 ,district:0,gun:'голые(но сильные) руки'},
+                { id: 2,igra:this.generateRandomAmount3(), orderNumber: '002', status: 'Выполнен', amount: 13 ,district:0,gun:'голые(но сильные) руки'},
             ];
             this.saveOrders(); // Сохраняем начальные заказы в localStorage
         }
     },
     methods: {
+        
         generateRandomGun() {
             // Массив возможных значений для свойства gun
             const statu = ['Новый','Ожидание','Выполнен'];
@@ -37,6 +38,10 @@ new Vue({
                 this.saveOrders(); // Сохраняем заказы после удаления
             }
         },
+        generateRandomAmount3() {
+            // Генерируем случайное число от 1 до 100 для суммы заказа
+            return Math.floor(Math.random() * 1000) + 1;
+        },
         generateRandomAmount() {
             // Генерируем случайное число от 1 до 100 для суммы заказа
             return Math.floor(Math.random() * 100) + 1;
@@ -55,7 +60,8 @@ new Vue({
                     status: 'Новый',
                     amount: this.generateRandomAmount(),
                     district: this.generateRandomAmount2(),
-                    gun: this.generateRandomGun()
+                    gun: this.generateRandomGun(),
+                    igra: this.generateRandomAmount3()
                 };
                 this.orders.push(newOrder);
             } else {
