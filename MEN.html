@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="MENCSS.css">
+    <link rel="stylesheet">
     <title>Менеджер Заказов</title>
 </head>
 <body>
     <div id="orders-container">
         <h1>Список Заказов</h1>
         <div class="order" v-for="order in orders" :key="order.id">
-            <div>
-                <strong>Номер заказа:</strong> {{ order.orderNumber }}
-            </div>
-            <div>
-                <strong>Статус:</strong> {{ order.status }}
+            <div class="order-details">
+                <div>
+                    <strong>Номер заказа:</strong> {{ order.orderNumber }}
+                </div>
+                <div>
+                    <strong>Статус:</strong> {{ order.status }}
+                </div>
             </div>
             <div>
                 <button @click="renameOrder(order.id)">Переименовать</button>
@@ -21,6 +25,6 @@
         </div>
         <button id="add-order-btn" @click="addNewOrder">Добавить новый заказ</button>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="MENJS.js"></script>
 </body>
 </html>
