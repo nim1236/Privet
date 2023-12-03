@@ -16,15 +16,28 @@
                     <strong>Номер заказа:</strong> {{ order.orderNumber }}
                 </div>
                 <div>
+                    <strong>Клиент из дистрикта:</strong> {{ order.district}}
+                </div>
+                <div>
                     <strong>Статус:</strong> {{ order.status }}
+                </div>
+                <div>
+                    <strong>Сумма:</strong> {{ order.amount }}
+                </div>
+                <div>
+                    <strong>Вы приобрели оружие:</strong> {{ order.gun }}
                 </div>
             </div>
             <div>
-                <button @click="renameOrder(order.id)">Переименовать</button>
+                <button id="pere-order-btn" @click="renameOrder(order.id)">Переименовать</button>
             </div>
         </div>
         <button id="add-order-btn" @click="addNewOrder">Добавить новый заказ</button>
+        <button id="delete-order-btn" @click="deleteLastOrder">Удалить последний заказ</button>
+        <button id="delete-all-orders-btn" @click="deleteAllOrders">Удалить все заказы</button>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="MENJS.js"></script>
+    
 </body>
 </html>

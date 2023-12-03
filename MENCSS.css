@@ -13,11 +13,36 @@ body {
     padding: 10px;
     margin-bottom: 10px;
     display: flex;
-    justify-content: space-between; /* Изменено на justify-content: space-between */
+    justify-content: space-between; 
     align-items: center; /* Добавлено для выравнивания элементов по центру */
 }
 
 #add-order-btn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#delete-order-btn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#pere-order-btn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#delete-all-orders-btn {
     margin-top: 20px;
     padding: 10px;
     background-color: #4CAF50;
