@@ -1,7 +1,10 @@
 new Vue({
     el: '#orders-container',
     data: {
-        orders: []
+        orders: [],
+        searchDistrict: '', 
+        isSearching: false
+        
     },
     mounted() {
         // При загрузке страницы пытаемся получить заказы из localStorage
@@ -17,7 +20,28 @@ new Vue({
             this.saveOrders(); // Сохраняем начальные заказы в localStorage
         }
     },
+    computed: {
+        filteredOrders() {
+            if (this.isSearching) {
+                return this.orders.filter(order => {
+                    return Number(order.district) === Number(this.searchDistrict);
+                });
+            } else {
+                return this.orders;
+            }
+        }
+    },
     methods: {
+        searchOrders() {
+            this.isSearching = true; 
+            if (this.filteredOrders.length > 0) {
+                const orderInfo = this.filteredOrders.map(order => `Заказ №${order.orderNumber} (${order.district} район)`).join('\n');
+                window.alert(`Найденные заказы:\n${orderInfo}`);
+            } else {
+                window.alert('Нет заказов по вашему запросу.');
+            }
+            this.isSearching = false;
+        },
         deleteOrder(orderId) {
             const confirmed = confirm('Вы уверены, что хотите удалить текущий заказ?');
             if (confirmed) {
@@ -76,8 +100,9 @@ new Vue({
                     orderNumber: '00' + (this.orders.length + 1),
                     status: 'Новый',
                     amount: prompt('Введите сумму денег:'),
-                    district: prompt('Введите район:'),
-                    gun: prompt('Введите оружие:')
+                    district: this.generateRandomAmount2(),
+                    gun: prompt('Введите оружие:'),
+                    igra: this.generateRandomAmount3()
                 };
                 this.orders.push(newOrder);
             }
@@ -90,31 +115,23 @@ new Vue({
                 const order = this.orders.find(order => order.id === orderId);
                 if (order) {
                     order.orderNumber = newName;
-                    this.saveOrders(); // Сохраняем заказы после переименования
+                    this.saveOrders();
                 }
             }
-            const newamount=prompt('Введите сумму денег:');
+            const newamount = prompt('Введите сумму денег:');
             if (newamount !== null) {
                 const order = this.orders.find(order => order.id === orderId);
                 if (order) {
                     order.amount = newamount;
-                    this.saveOrders(); // Сохраняем заказы после переименования
+                    this.saveOrders();
                 }
             }
-            const newdistrict=prompt('Введите район:');
-            if (newdistrict !== null) {
-                const order = this.orders.find(order => order.id === orderId);
-                if (order) {
-                    order.district = newamount;
-                    this.saveOrders(); // Сохраняем заказы после переименования
-                }
-            }
-            const newgun=prompt('Введите оружие:');
+            const newgun = prompt('Введите оружие:');
             if (newgun !== null) {
                 const order = this.orders.find(order => order.id === orderId);
                 if (order) {
-                    order.gun = newamount;
-                    this.saveOrders(); // Сохраняем заказы после переименования
+                    order.gun = newgun;
+                    this.saveOrders();
                 }
             }
         },

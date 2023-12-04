@@ -78,3 +78,10 @@ body {
     border: none;
     cursor: pointer;
 }
+#poi-order-btn {
+    
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

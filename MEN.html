@@ -10,7 +10,11 @@
 <body>
     <div id="orders-container">
         <h1>Список Заказов</h1>
-        <div class="order" v-for="order in orders" :key="order.id">
+        <input type="text" v-model="searchDistrict" placeholder="Введите дистрикт">
+        <button id="poi-order-btn" @click="searchOrders">Поиск</button>
+
+
+        <div class="order" v-for="order in filteredOrders" :key="order.id">
             <div class="order-details">
                 <div>
                     <strong>Заказ на {{ order.igra }} Голодные игры</strong>
