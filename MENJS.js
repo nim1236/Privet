@@ -35,7 +35,7 @@ new Vue({
         searchOrders() {
             this.isSearching = true; 
             if (this.filteredOrders.length > 0) {
-                const orderInfo = this.filteredOrders.map(order => `Заказ №${order.orderNumber} (${order.district} район)`).join('\n');
+                const orderInfo = this.filteredOrders.map(order => `Заказ №${order.orderNumber} (${order.district} дистрикт)`).join('\n');
                 window.alert(`Найденные заказы:\n${orderInfo}`);
             } else {
                 window.alert('Нет заказов по вашему запросу.');
@@ -69,7 +69,7 @@ new Vue({
             }
         },
         generateRandomAmount3() {
-            // Генерируем случайное число от 1 до 100 для суммы заказа
+            // Генерируем случайное число от 1 до 1000 для суммы заказа
             return Math.floor(Math.random() * 1000) + 1;
         },
         generateRandomAmount() {
@@ -77,7 +77,7 @@ new Vue({
             return Math.floor(Math.random() * 100) + 1;
         },
         generateRandomAmount2() {
-            // Генерируем случайное число от 1 до 100 для суммы заказа
+            // Генерируем случайное число от 1 до 13 для суммы заказа
             return Math.floor(Math.random() * 13) + 1;
         },
         addNewOrder() {
@@ -95,14 +95,15 @@ new Vue({
                 };
                 this.orders.push(newOrder);
             } else {
+                
                 const newOrder = {
                     id: this.orders.length + 1,
                     orderNumber: '00' + (this.orders.length + 1),
-                    status: 'Новый',
+                    status: this.generateRandomStas(),
                     amount: prompt('Введите сумму денег:'),
                     district: this.generateRandomAmount2(),
                     gun: prompt('Введите оружие:'),
-                    igra: this.generateRandomAmount3()
+                    igra: prompt('Введите игру:')
                 };
                 this.orders.push(newOrder);
             }

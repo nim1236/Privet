@@ -85,3 +85,62 @@ body {
     border: none;
     cursor: pointer;
 }
+.district-square {
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.district-info {
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center; /* Выравниваем элементы по вертикали по центру */
+}
+
+.district-info::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    margin-left: -10px; /* Опциональный отступ между текстом и квадратиком */
+}
+.tooltip {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tooltip img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Стили для анимации */
+.tooltip-enter-active, .tooltip-leave-active {
+    transition: opacity 0.5s;
+}
+.tooltip-enter, .tooltip-leave-to {
+    opacity: 0;
+}
+.district-image {
+    max-width: 100px; /* Максимальная ширина изображения */
+    margin-right: 10px; /* Отступ справа от изображения */
+}

@@ -12,8 +12,6 @@
         <h1>Список Заказов</h1>
         <input type="text" v-model="searchDistrict" placeholder="Введите дистрикт">
         <button id="poi-order-btn" @click="searchOrders">Поиск</button>
-
-
         <div class="order" v-for="order in filteredOrders" :key="order.id">
             <div class="order-details">
                 <div>
@@ -35,8 +33,9 @@
                     <strong>Вы приобрели оружие:</strong> {{ order.gun }}
                 </div>
             </div>
+            <img :src="'Dis' + order.district + '.jpg'" alt="District Image" class="district-image">
             <div class="buttons-container">
-                <button id="abc1" @click="renameOrder(order.id)">Переименовать</button>
+                <button id="abc1" @click="renameOrder(order.id)">Изменить</button>
                 <div style="margin-top: 10px;"></div>
                 <button id="abc2" @click="deleteOrder(order.id)">Удалить текущий заказ</button>
             </div>
