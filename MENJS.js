@@ -2,13 +2,16 @@ new Vue({
     el: '#orders-container',
     data: {
         orders: [],
+        deletedOrders: [],
         searchDistrict: '', 
-        isSearching: false
+        isSearching: false,
+        showDeletedOrders: false
         
     },
     mounted() {
         // При загрузке страницы пытаемся получить заказы из localStorage
         const storedOrders = localStorage.getItem('orders');
+        const storedDeletedOrders = localStorage.getItem('deletedOrders');
         if (storedOrders) {
             this.orders = JSON.parse(storedOrders);
         } else {
@@ -18,6 +21,12 @@ new Vue({
                 { id: 2,igra:this.generateRandomAmount3(), orderNumber: '002', status: 'Выполнен', amount: 13 ,district:0,gun:'голые(но сильные) руки'},
             ];
             this.saveOrders(); // Сохраняем начальные заказы в localStorage
+        }
+        if (storedDeletedOrders) {
+            this.deletedOrders = JSON.parse(storedDeletedOrders);
+        } else {
+            
+            this.saveDeletedOrders(); // Сохраняем начальные удалённые заказы в localStorage
         }
     },
     computed: {
@@ -32,6 +41,44 @@ new Vue({
         }
     },
     methods: {
+        clearDeletedOrdersHistory() {
+            const confirmed = confirm('Вы уверены, что хотите очистить историю удалённых заказов?');
+            if (confirmed) {
+                this.deletedOrders = [];
+                this.saveDeletedOrders(); // Сохраняем изменения в localStorage
+            }
+        },
+        toggleDeletedOrdersVisibility() {
+            // Метод для переключения видимости истории удалённых заказов
+            this.showDeletedOrders = !this.showDeletedOrders;
+        },
+        deletePermanently(orderId) {
+            const confirmed = confirm('Вы уверены, что хотите удалить заказ окончательно?');
+            if (confirmed) {
+                const orderIndex = this.deletedOrders.findIndex(order => order.id === orderId);
+                if (orderIndex !== -1) {
+                    this.deletedOrders.splice(orderIndex, 1);
+                    this.saveDeletedOrders(); // Обновляем удалённые заказы в localStorage
+                } else {
+                    alert('Удалённый заказ не найден.');
+                }
+            }
+        },
+    
+        restoreOrder(orderId) {
+            const orderIndex = this.deletedOrders.findIndex(order => order.id === orderId);
+            if (orderIndex !== -1) {
+                const restoredOrder = this.deletedOrders.splice(orderIndex, 1)[0];
+                this.orders.push(restoredOrder);
+                this.saveOrders(); // Обновляем заказы в localStorage
+                this.saveDeletedOrders(); // Обновляем удалённые заказы в localStorage
+            } else {
+                alert('Удалённый заказ не найден.');
+            }
+        },
+        showDeletedOrdersHistory() {
+            
+        },
         searchOrders() {
             this.isSearching = true; 
             if (this.filteredOrders.length > 0) {
@@ -45,8 +92,15 @@ new Vue({
         deleteOrder(orderId) {
             const confirmed = confirm('Вы уверены, что хотите удалить текущий заказ?');
             if (confirmed) {
-                this.orders = this.orders.filter(order => order.id !== orderId);
-                this.saveOrders();
+                const orderIndex = this.orders.findIndex(order => order.id === orderId);
+                if (orderIndex !== -1) {
+                    const deletedOrder = this.orders.splice(orderIndex, 1)[0];
+                    this.deletedOrders.push(deletedOrder); // Добавляем удалённый заказ в историю
+                    this.saveOrders();
+                    this.saveDeletedOrders(); // Обновляем удалённые заказы в localStorage
+                } else {
+                    alert('Заказ не найден.');
+                }
             }
         },
         generateRandomStas() {
@@ -146,6 +200,10 @@ new Vue({
             } else {
                 alert('Нет заказов для удаления.');
             }
+        },
+        saveDeletedOrders() {
+            // Сохраняем удалённые заказы в localStorage
+            localStorage.setItem('deletedOrders', JSON.stringify(this.deletedOrders));
         },
         saveOrders() {
             // Сохраняем заказы в localStorage в виде строки

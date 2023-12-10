@@ -43,7 +43,28 @@
         <button id="add-order-btn" @click="addNewOrder">Добавить новый заказ</button>
         <button id="delete-order-btn" @click="deleteLastOrder">Удалить последний заказ</button>
         <button id="delete-all-orders-btn" @click="deleteAllOrders">Удалить все заказы</button>
+        <button id="history-btn" @click="toggleDeletedOrdersVisibility">История удалённых заказов</button>
+        <div v-if="showDeletedOrders" id="deleted-orders-container">
+            <h2>История удалённых заказов</h2>
+            <button id="clear-deleted-orders-btn" @click="clearDeletedOrdersHistory">Очистить историю удалённых заказов</button>
+            <div class="order" v-for="order in deletedOrders" :key="order.id">
+                
+                <div class="order-details">
+                    <div>
+                        <strong>Заказ на {{ order.igra }} Голодные игры</strong>
+                    </div>
+                    
+                </div>
+                <img :src="'Dis' + order.district + '.jpg'" alt="District Image" class="district-image">
+                <div class="buttons-container">
+                    <button id="abc2" @click="restoreOrder(order.id)">Восстановить заказ</button>
+                    <div style="margin-top: 10px;"></div>
+                    <button id="abc2" @click="deletePermanently(order.id)">Удалить окончательно</button>
+                </div>
+            </div>
+        </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="MENJS.js"></script>
     

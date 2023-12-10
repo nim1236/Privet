@@ -78,6 +78,18 @@ body {
     border: none;
     cursor: pointer;
 }
+#clear-deleted-orders-btn{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#history-btn{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
 #poi-order-btn {
     
     background-color: #4CAF50;
