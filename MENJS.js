@@ -16,10 +16,7 @@ new Vue({
             this.orders = JSON.parse(storedOrders);
         } else {
             // Если в localStorage нет данных, добавляем начальные заказы
-            this.orders = [
-                { id: 1,igra:this.generateRandomAmount3(), orderNumber: '001', status: 'В обработке', amount: 12 ,district:0,gun:'голые(но сильные) руки'},
-                { id: 2,igra:this.generateRandomAmount3(), orderNumber: '002', status: 'Выполнен', amount: 13 ,district:0,gun:'голые(но сильные) руки'},
-            ];
+            
             this.saveOrders(); // Сохраняем начальные заказы в localStorage
         }
         if (storedDeletedOrders) {
